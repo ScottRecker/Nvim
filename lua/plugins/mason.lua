@@ -17,6 +17,7 @@ return {
 				"jsonls",
 				"pyright",
 				"tailwindcss",
+				"typescript-language-server",
 			},
 		})
 
