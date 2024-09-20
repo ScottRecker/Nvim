@@ -49,11 +49,10 @@ return {
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
 		require("nvim-tree").setup(opts)
-    vim.keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>", { desc = "toggle file explorer" })
-    vim.keymap.set("n", "<leader>eo", ":NvimTreeFocus<CR>", { desc = "toggle focus to file explorer" })
-    vim.keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>", { desc = "find file in file explorer" })
-    vim.keymap.set("n", "<leader>ec", ":NvimTreeCollapse<CR>", { desc = "collapse all open folders" })
-    vim.keymap.set("n", "<leader>er", ":NvimTreeRefresh<CR>", { desc = "refresh the file explorer" })
+		vim.keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>", { desc = "toggle file explorer" })
+		vim.keymap.set("n", "<leader>eo", ":NvimTreeFocus<CR>", { desc = "toggle focus to file explorer" })
+		vim.keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>", { desc = "find file in file explorer" })
+		vim.keymap.set("n", "<leader>ec", ":NvimTreeCollapse<CR>", { desc = "collapse all open folders" })
+		vim.keymap.set("n", "<leader>er", ":NvimTreeRefresh<CR>", { desc = "refresh the file explorer" })
 	end,
 }
-
