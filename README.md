@@ -1,1 +1,1 @@
-Current NeoVim config
+## Current NeoVim config
