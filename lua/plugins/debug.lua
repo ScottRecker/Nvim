@@ -6,9 +6,7 @@
 -- be extended to other languages as well.
 
 return {
-	-- NOTE: Yes, you can install new plugins here!
 	"mfussenegger/nvim-dap",
-	-- NOTE: And you can specify dependencies as well
 	dependencies = {
 		-- Creates a beautiful debugger UI
 		-- "rcarriga/nvim-dap-ui",
@@ -23,10 +21,12 @@ return {
 
 		-- Add your own debuggers here
 		"leoluz/nvim-dap-go",
+		"theHamsta/nvim-dap-virtual-text",
 	},
 	keys = function(_, keys)
 		local dap = require("dap")
 		local dapui = require("dapui")
+
 		return {
 			-- Basic debugging keymaps, feel free to change to your liking!
 			{ "<F5>", dap.continue, desc = "Debug: Start/Continue" },
@@ -150,7 +150,6 @@ return {
 				max_value_lines = 100,
 			},
 		})
-
 		dap.listeners.after.event_initialized["dapui_config"] = dapui.open
 		dap.listeners.before.event_terminated["dapui_config"] = dapui.close
 		dap.listeners.before.event_exited["dapui_config"] = dapui.close
