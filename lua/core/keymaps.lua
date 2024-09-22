@@ -56,34 +56,29 @@ keymap.set("n", "<leader>qc", ":cclose<CR>", { desc = "close quickfix list" })
 -- Vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "toggle maximize tab" })
 
--- Trouble
-vim.keymap.set("n", "<leader>xx", function()
-	require("trouble").toggle()
-end, { desc = "Trouble toggle" })
-
-vim.keymap.set("n", "<leader>xw", function()
-	require("trouble").toggle("workspace_diagnostics")
-end, { desc = "Trouble workspace diagnostics" })
-
-vim.keymap.set("n", "<leader>xd", function()
-	require("trouble").toggle("document_diagnostics")
-end, { desc = "Trouble document diagnostics" })
-
-vim.keymap.set("n", "<leader>xq", function()
-	require("trouble").toggle("quickfix")
-end, { desc = "Trouble quickfix" })
-
-vim.keymap.set("n", "<leader>xl", function()
-	require("trouble").toggle("loclist")
-end, { desc = "Trouble loclist" })
-
-vim.keymap.set("n", "gR", function()
-	require("trouble").toggle("lsp_references")
-end, { desc = "Trouble lsp references" })
-keymap.set("n", "<leader>xt", "<cmd>TodoTrouble<cr>", { desc = "Open todos in Trouble" })
-
 -- Git-blame
 keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "toggle git blame" })
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Diagnostic keymaps
+-- vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+-- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
+-- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
+-- is not what someone will guess without a bit more experience.
+--
+-- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
+-- or just use <C-\><C-n> to exit terminal mode
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+--  See `:help wincmd` for a list of all window commands
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- Filetype-specific keymaps (these can be done in the ftplugin directory instead if you prefer)
 keymap.set("n", "<leader>go", function()
